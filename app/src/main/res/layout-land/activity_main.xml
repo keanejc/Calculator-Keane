@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:columnCount="5"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <TextView
         android:text="@string/text"
         android:layout_row="0"
         android:textSize="20pt"
-        />
+        android:id="@+id/textView" />
 
 
     <Button
