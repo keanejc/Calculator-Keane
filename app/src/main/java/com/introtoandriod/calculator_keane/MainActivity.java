@@ -175,12 +175,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState( Bundle savedInstanceState){
+        //TODO update w/necessary variables
         savedInstanceState.putCharSequence("view", textView.getText());
 
     }
 
     @Override
     protected void onRestoreInstanceState( Bundle savedInstanceState){
+        //TODO see onSave
         textView.setText(savedInstanceState.getCharSequence("view"));
     }
 }
