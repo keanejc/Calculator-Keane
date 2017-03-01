@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Variables
-    int answer;
-    int newNum;
+    String answer;
+    String newNum;
     String operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        answer = 0;
-        newNum = 0;
+        answer = null;
+        newNum = null;
         operation = null;
 
 
@@ -47,76 +47,150 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("1");
+                if( operation != null){
+                    newNum += 1;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 1;
+                    textView.setText(answer);
+                }
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("2");
+                if( operation != null){
+                    newNum += 2;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 2;
+                    textView.setText(answer);
+                }
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("3");
+                if( operation != null){
+                    newNum += 3;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 3;
+                    textView.setText(answer);
+                }
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("4");
+                if( operation != null){
+                    newNum += 4;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 4;
+                    textView.setText(answer);
+                }
             }
         });
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("5");
+                if( operation != null){
+                    newNum += 5;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 5;
+                    textView.setText(answer);
+                }
             }
         });
 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("6");
+                if( operation != null){
+                    newNum += 6;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 6;
+                    textView.setText(answer);
+                }
             }
         });
 
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("7");
+                if( operation != null){
+                    newNum += 7;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 7;
+                    textView.setText(answer);
+                }
             }
         });
 
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("8");
+                if( operation != null){
+                    newNum += 8;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 8;
+                    textView.setText(answer);
+                }
             }
         });
 
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("9");
+                if( operation != null){
+                    newNum += 9;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 9;
+                    textView.setText(answer);
+                }
             }
         });
 
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("0");
+                if( operation != null){
+                    newNum += 0;
+                    textView.setText(newNum);
+                }
+                else {
+                    answer += 0;
+                    textView.setText(answer);
+                }
             }
         });
 
         multButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(operation != null){
+                    answer = Integer.toString(calculate(Integer.parseInt(answer), Integer.parseInt(newNum), operation));
+                    textView.setText(answer);
+                }
                 operation = "multiply";
             }
         });
@@ -124,6 +198,10 @@ public class MainActivity extends AppCompatActivity {
         divButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(operation != null){
+                    answer = Integer.toString(calculate(Integer.parseInt(answer), Integer.parseInt(newNum), operation));
+                    textView.setText(answer);
+                }
                 operation = "divide";
             }
         });
@@ -131,6 +209,10 @@ public class MainActivity extends AppCompatActivity {
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(operation != null){
+                    answer = Integer.toString(calculate(Integer.parseInt(answer), Integer.parseInt(newNum), operation));
+                    textView.setText(answer);
+                }
                 operation = "add";
             }
         });
@@ -138,51 +220,77 @@ public class MainActivity extends AppCompatActivity {
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(operation != null){
+                    answer = Integer.toString(calculate(Integer.parseInt(answer), Integer.parseInt(newNum), operation));
+                    textView.setText(answer);
+                }
                 operation = "minus";
             }
         });
-
+    // reset all variables except for the operation
         ceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                answer = 0;
-                newNum = 0;
+                answer = null;
+                newNum = null;
                 textView.setText("0");
             }
         });
 
+    // reset everything
         cButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                answer = 0;
-                newNum = 0;
+                answer = null;
+                newNum = null;
                 textView.setText("0");
                 operation = null;
             }
         });
-
+    // = Button - clear operation and newNum, leave answer as is
         eButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculate( answer, newNum, operation);
+                answer = Integer.toString(calculate(Integer.parseInt(answer), Integer.parseInt(newNum), operation));
+                textView.setText(answer);
+                operation = null;
+                newNum = null;
             }
         });
     }
 
-    private void calculate(int answer, int newNum, String operation) {
-        //TODO
+    private int calculate(int answer, int newNum, String operation) {
+        int rtrnval = 0;
+
+        // switch based on what 'operation' is
+        switch(operation){
+            case "add":
+               rtrnval = answer + newNum;
+            case "minus":
+                rtrnval = answer - newNum;
+            case "divide":
+                rtrnval = answer / newNum;
+            case "multiply":
+                rtrnval = answer * newNum;
+        }
+
+        return rtrnval;
     }
 
     @Override
     protected void onSaveInstanceState( Bundle savedInstanceState){
-        //TODO update w/necessary variables
         savedInstanceState.putCharSequence("view", textView.getText());
+        savedInstanceState.putString("op", operation);
+        savedInstanceState.putString("ans", answer);
+        savedInstanceState.putString("new", newNum);
 
     }
 
     @Override
     protected void onRestoreInstanceState( Bundle savedInstanceState){
-        //TODO see onSave
         textView.setText(savedInstanceState.getCharSequence("view"));
+        operation = savedInstanceState.getString("op");
+        answer = savedInstanceState.getString("ans");
+        newNum = savedInstanceState.getString("new");
     }
 }
