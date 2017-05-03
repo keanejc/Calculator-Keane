@@ -10,23 +10,23 @@ public class MainActivity extends AppCompatActivity {
     // Load views
     TextView textView = (TextView) findViewById(R.id.textView);
 
-    Button button1 = (Button) findViewById(R.id.button1);
-    Button button2 = (Button) findViewById(R.id.button2);
-    Button button3 = (Button) findViewById(R.id.button3);
-    Button button4 = (Button) findViewById(R.id.button4);
-    Button button5 = (Button) findViewById(R.id.button5);
-    Button button6 = (Button) findViewById(R.id.button6);
-    Button button7 = (Button) findViewById(R.id.button7);
-    Button button8 = (Button) findViewById(R.id.button8);
-    Button button9 = (Button) findViewById(R.id.button9);
-    Button button0 = (Button) findViewById(R.id.button0);
-    Button multButton = (Button) findViewById(R.id.multButton);
-    Button divButton = (Button) findViewById(R.id.divButton);
-    Button plusButton = (Button) findViewById(R.id.plusButton);
-    Button minusButton = (Button) findViewById(R.id.minusButton);
-    Button ceButton = (Button) findViewById(R.id.ceButton);
-    Button cButton = (Button) findViewById(R.id.cButton);
-    Button eButton = (Button) findViewById(R.id.eButton);
+    Button button1;
+    Button button2 ;
+    Button button3 ;
+    Button button4 ;
+    Button button5 ;
+    Button button6 ;
+    Button button7 ;
+    Button button8 ;
+    Button button9 ;
+    Button button0 ;
+    Button multButton ;
+    Button divButton ;
+    Button plusButton ;
+    Button minusButton ;
+    Button ceButton ;
+    Button cButton;
+    Button eButton ;
 
 
     // Variables
@@ -38,6 +38,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
+        button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
+        button8 = (Button) findViewById(R.id.button8);
+        button9 = (Button) findViewById(R.id.button9);
+        button0 = (Button) findViewById(R.id.button0);
+        multButton = (Button) findViewById(R.id.multButton);
+        divButton = (Button) findViewById(R.id.divButton);
+        plusButton = (Button) findViewById(R.id.plusButton);
+        minusButton = (Button) findViewById(R.id.minusButton);
+        ceButton = (Button) findViewById(R.id.ceButton);
+        cButton = (Button) findViewById(R.id.cButton);
+        eButton = (Button) findViewById(R.id.eButton);
+
+
         answer = null;
         newNum = null;
         operation = null;
